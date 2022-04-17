@@ -1,0 +1,91 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: #3EE8C4;
+    display: flex;
+    width: 100%;
+}
+#logo{
+    width: 13rem;
+    height: 8rem;
+}
+#archive{
+    width: 30px;
+    height: 30px;
+}
+
+#div-input{
+    position: relative;
+    top: 46px;
+    left: 20%;
+    height: 47px;
+    background-color: white;
+    padding: 7px;
+
+  border: 1.5px solid;
+  border-color: black;
+  border-radius: 4px;
+
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+p{
+    margin-bottom: 0rem;
+}
+table{
+    width: 400px;
+    height: 300px;
+    position: relative;
+    left: 0.5%;
+    top: 10px;
+    border: 2px solid;
+}
+
+table:hover{
+    animation: pulsate 3s ease-in-out;
+}
+#div-barras{
+    position: relative;
+    left: 40px;
+    top: 10px;
+
+    
+}
+
+#myChart{
+    border: 2px solid;
+    border-color: black;
+    border-radius: 4px;
+}
+#myChart:hover{
+    animation: pulsate 3s ease-in-out;
+}
+#div-pizza{
+    position: relative;
+    left: 90px;
+    top: 10px;
+}
+#gPizzas{
+    border: 2px solid;
+    border-color: black;
+    border-radius: 4px;
+}
+#gPizzas:hover{
+    animation: pulsate 3s ease-in-out;
+}
+@keyframes pulsate{
+    0%{
+        box-shadow: 
+        0 0 25px #3EE8C4,
+        0 0 50px #3EE8C4;
+        ;
+    }
+}
