@@ -9,6 +9,7 @@ header{
     display: flex;
     width: 100%;
 }
+
 #logo{
     width: 13rem;
     height: 8rem;
@@ -26,6 +27,7 @@ header{
     background-color: white;
     padding: 7px;
 
+   
   border: 1.5px solid;
   border-color: black;
   border-radius: 4px;
@@ -35,10 +37,17 @@ header{
 main{
     display: flex;
     flex-wrap: wrap;
+    
+    width: 100%;
    
 }
 p{
     margin-bottom: 0rem;
+    font-weight: bold;
+}
+#info{
+position: relative;
+top: 10px;
 }
 table{
     width: 400px;
@@ -47,20 +56,28 @@ table{
     left: 0.5%;
     top: 10px;
     border: 2px solid;
+    border-radius: 4px;
+    
 }
 
 table:hover{
     animation: pulsate 3s ease-in-out;
 }
+
+#div-table{
+    
+    display: none;
+}
 #div-barras{
     position: relative;
     left: 40px;
     top: 10px;
-
+    display: none;
     
 }
 
 #myChart{
+    
     border: 2px solid;
     border-color: black;
     border-radius: 4px;
@@ -69,6 +86,7 @@ table:hover{
     animation: pulsate 3s ease-in-out;
 }
 #div-pizza{
+    display: none;
     position: relative;
     left: 90px;
     top: 10px;
@@ -88,4 +106,23 @@ table:hover{
         0 0 50px #3EE8C4;
         ;
     }
+}
+
+#maxmin{
+    width: 400px;
+    height: 300px;
+    position: relative;
+    top: 15px;
+    display: none;
+    border: 2px solid;
+    border-color: black;
+    border-radius: 4px;
+    left: 0.2%;
+
+}
+#maxmin:hover{
+    animation: pulsate 3s ease-in-out;
+}
+#notas{
+    font-size: 20px;
 }

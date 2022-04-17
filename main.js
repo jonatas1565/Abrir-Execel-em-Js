@@ -2,7 +2,11 @@ var input = document.getElementById('input');
 let table = document.getElementById('headT'),
     body = document.getElementById('bodyT');
     Mnota = document.getElementById('maxmin')
-
+    dbarras = document.getElementById('div-barras')
+    dpizza= document.getElementById('div-pizza')
+    dtabela= document.getElementById('div-table')
+    
+    
 // função que lê o xlsx, cria tabelas e graficos.
 input.addEventListener('change', function(){
     readXlsxFile(input.files[0]).then(function(data){
@@ -11,6 +15,7 @@ input.addEventListener('change', function(){
         inserindoGbarras(data);
         inserindoGpizzas(data);
         menorNota(data);
+        menorNota2(data);
         
        })
     });
@@ -28,15 +33,17 @@ input.addEventListener('change', function(){
         cTable.push(`${table[i]}`);
     }
     headT.innerHTML = cTable.join('');
+    dtabela.style.display = 'block';
 }
 
-// inserindo o copor da tabela
+// inserindo o corpo da tabela
 function inserindoBodyT(data) {
     for (let i = 1; i < data.length; i++) {
         body.innerHTML += `
         <td>  ${data[i][0]} </td>
         <td> ${data[i][1]} </td>
         <td>  ${data[i][2]} </td>`;
+        
     }
 }
 
@@ -49,7 +56,7 @@ function inserindoGbarras(data){
         labels.push(data[i][0]);
         nota.push(data[i][1]);
         nota2.push(data[i][2]);
-        
+        dbarras.style.display = 'block';
     }
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
@@ -117,10 +124,11 @@ function inserindoGpizzas(data){
     nota = [];
     nota2 = [];
     for (let i = 1; i < data.length; i++){
-        if (data[i][1] >= 7) {
+        if (data[i][1]) {
         labels.push(data[i][0]);
         nota.push(data[i][1]);
         nota2.push(data[i][2]);
+        dpizza.style.display = 'block';
     }
     }
 const ctx = document.getElementById('gPizzas').getContext('2d');
@@ -182,3 +190,34 @@ const myChart = new Chart(ctx, {
 });
 
 }
+
+function menorNota(data){
+    var arr = []
+    for (let i = 1; i < data.length; i++){
+        arr.push(data [i][1])
+    }
+    
+    let min =Math.min(...arr);
+    let max = Math.max(...arr);
+    let notamax = document.querySelector('#maxnota')
+    let notamin = document.querySelector('#minnota')
+    Mnota.style.display = 'block';
+    notamax.innerHTML = min;
+    notamin.innerHTML= max;
+    
+}
+
+function menorNota2(data){
+    var arr = []
+    for (let i = 1; i < data.length; i++){
+        arr.push(data [i][2])
+    }
+    
+    let min =Math.min(...arr);
+    let max = Math.max(...arr);
+    let notamax2 = document.querySelector('#maxnota2')
+    let notamin2 = document.querySelector('#minnota2')
+    notamax2.innerHTML = min;
+    notamin2.innerHTML= max;
+}
+

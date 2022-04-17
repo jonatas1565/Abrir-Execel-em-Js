@@ -1,0 +1,40 @@
+@media(max-width: 800px){
+body{
+    overflow-y: inherit;
+}
+#div-input{
+    width: 207px;
+    left: -9px;
+}
+#input{
+    width: 133px;
+}
+
+#info{
+    left: 5px;
+}
+table{
+    width: 360px;
+    left: 6px;
+}
+
+#div-barras{
+    left:2px;
+    width: 360px;
+}
+#myChart{
+    width: 370px !important;
+    height: 200px;
+}
+#div-pizza{
+    left: 2px;
+}
+#gPizzas{
+    width: 370px !important;
+    height: 200px;
+}
+#maxmin{
+    width: 370px;
+    height: 80%;
+}
+}
