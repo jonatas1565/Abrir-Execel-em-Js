@@ -1,6 +1,7 @@
 var input = document.getElementById('input');
 let table = document.getElementById('headT'),
     body = document.getElementById('bodyT');
+    Mnota = document.getElementById('maxmin')
 
 // função que lê o xlsx, cria tabelas e graficos.
 input.addEventListener('change', function(){
@@ -9,6 +10,7 @@ input.addEventListener('change', function(){
       inserindoBodyT(data);
         inserindoGbarras(data);
         inserindoGpizzas(data);
+        menorNota(data);
         
        })
     });
@@ -115,10 +117,11 @@ function inserindoGpizzas(data){
     nota = [];
     nota2 = [];
     for (let i = 1; i < data.length; i++){
+        if (data[i][1] >= 7) {
         labels.push(data[i][0]);
         nota.push(data[i][1]);
         nota2.push(data[i][2]);
-        
+    }
     }
 const ctx = document.getElementById('gPizzas').getContext('2d');
 const myChart = new Chart(ctx, {
